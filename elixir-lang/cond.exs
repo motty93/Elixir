@@ -16,3 +16,11 @@ cond do
   hd([1, 2, 3]) ->
     IO.puts("1 is considered as true.")
 end
+
+# マッチしなければエラーが発生する
+cond do
+  1 + 2 === 0 ->
+    IO.puts("Incorrect")
+  true ->
+    IO.puts("Default")
+end
