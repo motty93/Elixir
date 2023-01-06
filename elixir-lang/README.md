@@ -8,3 +8,15 @@
 - マップでは任意の値をキーとして使用できる
 - マップではキーは順序に従わない
 キーワードリストと対照的にパターンマッチングが役に立つ
+```elixir
+# 組み合わせて使われることがあるっぽい
+users = [
+  john: %{name: "john", age: 23, languages: ["erlang", "Ruby", "JavaScript"]},
+  mary: %{name: "mary", age: 23, languages: ["Ruby", "Java", "Go"]}
+]
+```
+
+## with
+`with/1`はネストされた`case/2`文を使うようなときやきれいにパイプできない状況に使いやすい
+
+with/1式はキーワード、ジェネレータ、式から成り立っている
