@@ -7,7 +7,9 @@ case {1, 2, 3} do
 end
 
 x = 1
+
 case 10 do
+  # 既存の変数に対してマッチさせたい場合pin演算子を使用する
   ^x ->
     IO.puts("Won't match")
 
