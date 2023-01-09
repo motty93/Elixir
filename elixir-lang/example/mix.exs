@@ -21,6 +21,7 @@ defmodule Example.MixProject do
   # Run "mix help deps" to learn about dependencies.
   defp deps do
     [
+      {:mix_test_watch, "~> 1.0", only: [:dev, :test], runtime: false},
       {:credo, "~> 1.6", only: [:dev, :test], runtime: false}
     ]
   end

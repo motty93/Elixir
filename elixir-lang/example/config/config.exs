@@ -1,5 +1,8 @@
-config :mix_test_watch,
-  tasks: [
-    "test",
-    "credo"
-  ]
+use Mix.Config
+
+if Mix.env() == :dev do
+  config :mix_test_watch,
+    tasks: [
+      "credo"
+    ]
+end
