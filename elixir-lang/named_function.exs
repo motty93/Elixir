@@ -51,4 +51,5 @@ end
 # nameがないと例外が発生する
 motty = %{name: "motty", age: "95", favotite_color: "red"}
 Greeter1.hello(motty)
-
+noname_motty = %{age: "95", favotite_color: "red"}
+Greeter1.hello(noname_motty)
