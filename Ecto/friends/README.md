@@ -19,3 +19,12 @@ Documentation can be generated with [ExDoc](https://github.com/elixir-lang/ex_do
 and published on [HexDocs](https://hexdocs.pm). Once published, the docs can
 be found at <https://hexdocs.pm/friends>.
 
+## Ecto
+### Changeset
+%{version: "1", title: "Changeset", excerpt: """EctoはChangesetモジュールとデータ構造体という形で、データの変更を扱うための完全なソリューションを提供する"""}
+
+
+```bash
+iex> %Ecto.Changeset{}
+%Ecto.Changeset<action: nil, changes: %{}, errors: [], data: nil, valid?: false>
+```
