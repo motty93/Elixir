@@ -1,0 +1,20 @@
+version: '3'
+
+services:
+  postgres:
+    build: ./docker
+    image: mix-friends-database
+    container_name: mix-friends-postgres
+    environment:
+      POSTGRES_HOST_AUTH_METHOD: 'trust'
+      TZ: 'Asia/Tokyo'
+    volumes:
+      - ./docker/init:/docker-entrypoint-initdb.d
+      - mix-friends-data:/var/lib/postgresql/data
+    ports:
+      - '5555:5432'
+    restart: always
+
+volumes:
+  mix-friends-data:
+    driver: local
