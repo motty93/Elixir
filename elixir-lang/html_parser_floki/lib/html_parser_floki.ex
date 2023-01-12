@@ -3,16 +3,21 @@ defmodule HtmlParserFloki do
   Documentation for `HtmlParserFloki`.
   """
 
-  @doc """
-  Hello world.
+  def perform do
+    search_keyword = "おなかの脂肪が気になる方のタブレット"
+    search_url = "https://search.rakuten.co.jp/search/mall/#{search_keyword}"
+    shop_name = "taisho-directshop"
+    categories = ["おなかの脂肪が気になる方のタブレット"]
 
-  ## Examples
+    HTTPoison.request!(:get, parse_url(search_url), "", [], recv_timeout: 100, timeout: 100)
+    |> Map.get(:title)
+  end
 
-      iex> HtmlParserFloki.hello()
-      :world
+  def parse_url(url, query \\ %{})
 
-  """
-  def hello do
-    IO.puts("Hello Html Parser Floki!")
+  def parse_url(url, query) do
+    URI.parse(url)
+    |> Map.put(:query, URI.encode_query(query))
+    |> URI.to_string()
   end
 end

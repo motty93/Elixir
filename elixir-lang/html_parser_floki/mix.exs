@@ -7,6 +7,7 @@ defmodule HtmlParserFloki.MixProject do
       version: "0.1.0",
       elixir: "~> 1.14",
       start_permanent: Mix.env() == :prod,
+      applications: [:logger, :httpoison],
       deps: deps()
     ]
   end
@@ -22,9 +23,10 @@ defmodule HtmlParserFloki.MixProject do
   defp deps do
     [
       {:floki, "~> 0.34.0"},
+      {:httpoison, "~> 1.8"},
       {:poison, "~> 5.0"},
       {:mix_test_watch, "~> 1.0", only: [:dev, :test], runtime: false},
-      {:credo, "~> 1.6", only: [:dev, :test], runtime: false},
+      {:credo, "~> 1.6", only: [:dev, :test], runtime: false}
     ]
   end
 end

@@ -9,6 +9,7 @@ defmodule Mix.Tasks.Parser do
     # This will start our application
     Mix.Task.run("app.start")
     # calling our Hello.say() function from earlier
-    HtmlParserFloki.hello()
+    res = HtmlParserFloki.perform()
+    IO.puts(res)
   end
 end
