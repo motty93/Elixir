@@ -1,13 +1,8 @@
 version: '3.4'
 
-volumes:
-  mysite.db.volume:
-    name: mysite.db.volume
-
 services:
   web:
-    build: .
-    container_name: mysite.web
+    container_name: phoenix-app
     ports:
       - "4000:4000"
     command: mix phx.server
@@ -21,10 +16,14 @@ services:
 
   db:
     image: postgres
-    container_name: mysite.db
+    container_name: phoenix-postgres
     environment:
       - POSTGRES_USER=postgres
       - POSTGRES_PASSWORD=postgres
       - POSTGRES_HOST=db
     volumes:
-      - mysite.db.volume:/var/lib/postgresql/data
+      - phoenix-sample-data:/var/lib/postgresql/data
+
+volumes:
+  mysite.db.volume:
+    name: phoenix-sample-data
