@@ -24,6 +24,7 @@ defmodule Friends.Person do
   end
 
   # カスタムバリデーション
+  # instance variable none equal
   @fictional_names ["Black Panther", "Wonder Woman", "Spiderman"]
   defp validate_fictional_name(changeset) do
     name = get_field(changeset, :name)
