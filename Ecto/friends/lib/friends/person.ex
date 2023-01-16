@@ -14,8 +14,6 @@ defmodule Friends.Person do
     struct
     |> cast(params, [:name, :age]) # changeset objectになる
     |> set_name_if_anonymous()
-    # |> validate_required([:name])
-    # |> validate_length(:name, min: 2)
     |> validate_fictional_name()
   end
 
