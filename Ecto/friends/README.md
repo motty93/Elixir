@@ -28,3 +28,10 @@ be found at <https://hexdocs.pm/friends>.
 iex> %Ecto.Changeset{}
 %Ecto.Changeset<action: nil, changes: %{}, errors: [], data: nil, valid?: false>
 ```
+
+### Association
+#### 関連データの保存
+`build_assoc/3`
+- 保存したいレコードの構造体
+- アソシエーションの名前
+- 保存する関連レコードにアサインしたい属性
