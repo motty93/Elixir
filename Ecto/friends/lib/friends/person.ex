@@ -3,6 +3,8 @@ defmodule Friends.Person do
 
   use Ecto.Schema
   import Ecto.Changeset
+  alias Friends.Repo
+  alias Friends.Person
 
   schema "people" do
     field(:name, :string)
@@ -10,7 +12,7 @@ defmodule Friends.Person do
   end
 
   # changesetでvalidation追加
-  def changeset(struct, params) do
+  def registration_changeset(struct, params) do
     struct
     # changeset objectになる
     |> cast(params, [:name, :age])
@@ -19,8 +21,8 @@ defmodule Friends.Person do
   end
 
   def sign_up(params) do
-    %Friends.Person{}
-    |> Friends.Person.registration_changeset(params)
+    %Person{}
+    |> Person.registration_changeset(params)
     |> Repo.insert()
   end
 
