@@ -28,3 +28,7 @@ IO.puts(second_color)
 %{primary: primary_color} = colors
 IO.puts("パターンマッチでの変数代入のほうがElixirでは多そう")
 IO.puts(primary_color)
+
+IO.puts("どちらも同じ")
+IO.puts(Map.put(colors, :primary, "green"))
+IO.puts(%{colors | primary: "green"})
