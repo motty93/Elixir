@@ -19,3 +19,12 @@ IO.inspect(%{a: 1, b: 2})
 
 IO.puts("mapのatomへのアクセス方法")
 IO.inspect(map.a, label: "map.a")
+
+colors = %{primary: "red", secondary: "blue"}
+IO.puts(colors.primary)
+IO.puts(colors.secondary)
+second_color = colors.secondary
+IO.puts(second_color)
+%{primary: primary_color} = colors
+IO.puts("パターンマッチでの変数代入のほうがElixirでは多そう")
+IO.puts(primary_color)
