@@ -1,0 +1,19 @@
+version: '3'
+
+services:
+  postgres:
+    build: ./postgres
+    image: discuss-database
+    container_name: discuss-database
+    environment:
+      POSTGRES_HOST_AUTH_METHOD: 'trust'
+      TZ: 'Asia/Tokyo'
+    volumes:
+      - ./postgres/init:/docker-entrypoint-initdb.d
+      - discuss-data:/var/lib/postgresql/data
+    ports:
+      - '5555:5432'
+    restart: always
+volumes:
+  discuss-data:
+    driver: local
